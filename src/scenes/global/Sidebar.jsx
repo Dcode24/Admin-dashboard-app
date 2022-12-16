@@ -61,18 +61,18 @@ const Sidebar = () => {
         },
       }}
     >
-        <ProSidebar collapsed={isCollapsed}>
-            <Menu iconShape="square">
+      <ProSidebar collapsed={isCollapsed}>
+        <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
-            <MenuItem
-                onClick={() => setIsCollapsed(!isCollapsed)}
-                icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-                style={{
-                    margin: "10px 0 20px 0",
-                    color: colors.grey[100],
-                }}
+          <MenuItem
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+            style={{
+              margin: "15px 0 20px 0",
+              color: colors.grey[100],
+            }}
           >
-                        {!isCollapsed && (
+            {!isCollapsed && (
               <Box
                 display="flex"
                 justifyContent="space-between"
@@ -89,6 +89,7 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
+          {/* USER */}
           {!isCollapsed && (
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
@@ -116,7 +117,8 @@ const Sidebar = () => {
             </Box>
           )}
 
-        <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          {/* MENU ITEMS */}
+          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
               to="/"
@@ -125,7 +127,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-        <Typography
+            <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
@@ -199,7 +201,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-             <Item
+            <Item
               title="Pie Chart"
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
@@ -228,4 +230,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
